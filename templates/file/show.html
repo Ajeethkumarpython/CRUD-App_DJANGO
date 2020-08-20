@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "file/base.html" %}
+    {% block child_block %}
+    <h3>Please see the updated rocord. Here you can Update or Delete the records</h3>
+    <div class="container">
+        <table border="5" align="center">
+            <thead>
+                <tr>
+                    <th>Emp_ID</th>
+                    <th>Emp_Name</th>
+                    <th>Experience</th>
+                    <th>Salary</th>
+                    <th>Address</th>
+                    <th>Tech_Skills</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        {%for employee in employees%}
+        <tr>
+            <td>{{employee.Emp_ID}}</td>
+            <td>{{employee.Emp_Name}}</td>
+            <td>{{employee.Experience}}</td>
+            <td>{{employee.Salary}}</td>
+            <td>{{employee.Address}}</td>
+            <td>{{employee.Tech_Skills}}</td>
+            <th><a href='/update/{{employee.Emp_ID}}' class="btn btn-success btn-lg">Update</a><a href='/delete/{{employee.Emp_ID}}' class="btn btn-success btn-lg">Delete</a></th>
+        </tr>
+
+        {% endfor %}
+        </table>
+    </div>
+    {% endblock %}

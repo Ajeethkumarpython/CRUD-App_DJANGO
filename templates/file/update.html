@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "file/base.html" %}
+    {% block child_block %}
+    <div class="container" align="left">
+            <form method='POST'>
+                <h2>Please update records carefully</h2>
+                {% csrf_token %}
+                <b></b>Emp_ID:<input type="text" name="Emp_ID" value="{{employee.Emp_ID}}"><br><br>
+                Emp_Namee:<input type="text" name="Emp_Name" value="{{employee.Emp_Name}}"><br><br>
+                Experience:<input type="text" name="Experience" value="{{employee.Experience}}"><br><br>
+                Salary:<input type="text" name="Salary" value="{{employee.Salary}}"><br><br>
+                Address:<input type="text" name="Address" value="{{employee.Address}}"><br><br>
+                Tech_Skills:<input type="text" name="Tech_Skills" value="{{employee.Tech_Skills}}"><br><br>
+                <input type="submit" value="Update_Record" name="">
+            </form>
+</div>
+
+    {% endblock %}
